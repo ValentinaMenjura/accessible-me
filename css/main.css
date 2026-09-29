@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: #fff;
+  color: #222;
   margin: 0;
   padding: 0;
 }
@@ -39,17 +40,23 @@ img {
 
 .main-nav ul li a {
   display: block;
-  color: inherit;
+  color: #222;
   text-decoration: none;
   font-size: 1.25rem;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  text-decoration: underline;
 }
 
 form input,
 form textarea {
   display: block;
   width: 100%;
+  box-sizing: border-box;
   margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  padding: .75rem;
 }
 
 form textarea {
@@ -57,6 +64,13 @@ form textarea {
   max-height: 150px;
   height: 150px;
   resize: none;
+}
+
+form input:focus,
+form textarea:focus,
+form button:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
 }
 
 form button {
@@ -68,4 +82,19 @@ form button {
 
 .site-footer {
   padding: 2rem 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
 }
